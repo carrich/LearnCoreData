@@ -13,9 +13,11 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    static var managerObjectContext: NSManagedObjectContext?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //trả về context của database
+        AppDelegate.managerObjectContext = persistentContainer.viewContext
         return true
     }
 
